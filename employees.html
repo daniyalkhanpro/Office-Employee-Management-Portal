@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Employee Portal</title>
+</head>
+
+<body>
+
+<h2>Office Employee Management Portal</h2>
+
+<form action="/add" method="POST">
+
+Name:
+<input name="name"><br><br>
+
+Designation:
+<input name="designation"><br><br>
+
+Date of Joining:
+<input type="date" name="doj"><br><br>
+
+Experience:
+<input name="experience"><br><br>
+
+Phone:
+<input name="phone"><br><br>
+
+Address:
+<textarea name="address"></textarea><br><br>
+
+<button type="submit">
+Add Employee
+</button>
+
+</form>
+
+
+<h3>Employee List</h3>
+
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Designation</th>
+<th>DOJ</th>
+<th>Experience</th>
+<th>Phone</th>
+<th>Address</th>
+</tr>
+
+
+{% for emp in employees %}
+
+<tr>
+
+<td>{{emp.name}}</td>
+<td>{{emp.designation}}</td>
+<td>{{emp.doj}}</td>
+<td>{{emp.experience}}</td>
+<td>{{emp.phone}}</td>
+<td>{{emp.address}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>
